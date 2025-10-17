@@ -1,3 +1,32 @@
+// Dark/Light Mode Logic
+(function() {
+    const root = document.body;
+    const toggleBtn = document.getElementById('theme-toggle-btn');
+    const icon = document.getElementById('theme-toggle-icon');
+    // Detect initial theme
+    const userPref = localStorage.getItem('sl-theme');
+    const sysPrefDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    function setTheme(isDark) {
+        if (isDark) {
+            root.classList.add('dark');
+            toggleBtn.setAttribute('aria-pressed', 'true');
+            icon.textContent = "☀️";
+        } else {
+            root.classList.remove('dark');
+            toggleBtn.setAttribute('aria-pressed', 'false');
+            icon.textContent = "🌙";
+        }
+    }
+    let isDark = userPref === 'dark' || (userPref === null && sysPrefDark);
+    setTheme(isDark);
+
+    toggleBtn.addEventListener('click', function() {
+        isDark = !root.classList.contains('dark');
+        setTheme(isDark);
+        localStorage.setItem('sl-theme', isDark ? 'dark' : 'light');
+    });
+})();
+
 const BOARD_SIZE = 10;
 const TOTAL_CELLS = BOARD_SIZE * BOARD_SIZE;
 
@@ -125,7 +154,7 @@ function showDice(roll) {
 // Update status
 function updateStatus() {
     const statusDiv = document.getElementById('players-status');
-    statusDiv.innerHTML = players.map((p, idx) => 
+    statusDiv.innerHTML = players.map((p, idx) =>
         `<span class="player-stat ${p.class}">${p.emoji} ${p.name} : ${p.pos}</span>`
     ).join('');
 }

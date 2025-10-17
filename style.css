@@ -4,8 +4,110 @@ body {
     margin: 0;
     color: #333;
     min-height: 100vh;
+    transition: background 0.3s, color 0.2s;
 }
 
+.theme-toggle-wrap {
+    position: fixed;
+    top: 18px;
+    right: 26px;
+    z-index: 100;
+}
+#theme-toggle-btn {
+    background: #f8f9fa;
+    border: 1px solid #dadada;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1.7em;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 8px #0001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.18s, color 0.18s, border 0.18s;
+    color: #323d75;
+}
+#theme-toggle-btn:active {
+    background: #e0e0e0;
+}
+#theme-toggle-btn[aria-pressed='true'] {
+    background: #262834;
+    color: #e0eafc;
+    border: 1px solid #353855;
+}
+
+body.dark,
+body.dark-mode {
+    background: linear-gradient(120deg, #1a263a, #292b36 100%);
+    color: #e0eafc;
+}
+body.dark .container,
+body.dark-mode .container {
+    background: #23253a;
+    color: #e0eafc;
+    box-shadow: 0 8px 32px rgba(10,16,35,0.36);
+}
+body.dark .cell,
+body.dark-mode .cell {
+    background: #232844;
+    border: 1px solid #2a314c;
+    color: #e5f6ff;
+}
+body.dark .cell.even,
+body.dark-mode .cell.even { background: #273f44; }
+body.dark .cell.odd,
+body.dark-mode .cell.odd { background: #343841; }
+body.dark .cell .cell-idx,
+body.dark-mode .cell .cell-idx {
+    color: #b0b6d0;
+}
+body.dark .cell .sn-ladder-emoji,
+body.dark-mode .cell .sn-ladder-emoji {
+    filter: drop-shadow(0 1px 1px #253560);
+}
+body.dark .piece,
+body.dark-mode .piece {
+    filter: drop-shadow(0 0 4px #18204099);
+}
+body.dark .piece.player1,
+body.dark-mode .piece.player1 { background: #24656d; }
+body.dark .piece.player2,
+body.dark-mode .piece.player2 { background: #5c2a52; }
+body.dark #turn-indicator,
+body.dark-mode #turn-indicator {
+    color: #8be3af;
+}
+body.dark .control-panel button,
+body.dark-mode .control-panel button {
+    background: #3c6f60;
+    color: #e0fcff;
+}
+body.dark .control-panel button:active,
+body.dark-mode .control-panel button:active {
+    background: #27574a;
+}
+body.dark #restart-btn,
+body.dark-mode #restart-btn {
+    background: #b14643;
+}
+body.dark #restart-btn:hover,
+body.dark-mode #restart-btn:hover {
+    background: #962831;
+}
+body.dark #dice-result,
+body.dark-mode #dice-result {
+    color: #f6e671;
+}
+body.dark footer,
+body.dark-mode footer {
+    color: #b1c5ef;
+}
+body.dark footer a,
+body.dark-mode footer a { color: #b1d1ff; }
+
+/* Standard styles (unchanged except moved after dark mode for specificity) */
 .container {
     max-width: 520px;
     margin: 32px auto;

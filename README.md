@@ -1,32 +1,29 @@
 # Snakes & Ladders Game 🐍🪜
 
-A classic two-player Snakes & Ladders game implemented with HTML, CSS, and JavaScript. Features emoji tokens, visible numbers, snakes, and ladders on the board. Playable in-browser and deployable via GitHub Pages.
+A visually pleasing, classic two-player Snakes & Ladders game, built purely with HTML, CSS, and JavaScript. Enjoy a dark/light mode toggle, emoji icons, dice rolling, clean UX, and instant-play in your browser.
 
 ## Features
 
-- 10x10 board with numbered cells (1–100)
-- Snakes (🐍) and ladders (🪜) at classic positions
-- Two player support (Player 1: 🟢, Player 2: 🔴)
-- Beautiful layout, dice emojis, and extra turn on rolling a 6
-- Animations for movement and instant status updates
-- Fully responsive interface
-- Restart button to play again
+- **Theme Switch:** Toggle between Dark and Light modes.
+- **Modern Interface:** Responsive 10x10 grid, color-coded tokens, and emoji-enhanced tiles.
+- **Classic Gameplay:** Standard snakes and ladders configuration.
+- **Dice with Extra Turn:** Roll a 6 to play again!
+- **Live Status:** Turn indicator, player positions, restart option.
+- **No Build Needed:** Deploy directly via GitHub Pages or open `index.html`.
 
-## How to Play
+## Play
 
-1. Click "Roll Dice" to play your turn.
-2. Your player emoji will move according to your dice roll.
-3. Landing on a ladder moves you up; landing on a snake moves you down.
-4. First to reach square 100 wins!
-5. Roll a 6 to play again.
+1. Click "🎲 Roll Dice" to play your turn.
+2. Move up ladders or down snakes automatically.
+3. First to reach square 100 wins.
+4. Use the ☀️/🌙 toggle button (top-right) any time.
 
-## Local Deployment
+## Deploy / Run
 
-No build required. Just open `index.html` in your browser.
+- Deploy the repo via [GitHub Pages](https://pages.github.com/) (entry: `index.html`).
+- Or, just `open index.html` in any web browser.
 
-Or deploy directly to [GitHub Pages](https://pages.github.com/).
-
-## File Structure
+### File Structure
 
 
 index.html
@@ -38,4 +35,4 @@ LICENSE
 
 ## License
 
-MIT License (see [LICENSE](./LICENSE))
+MIT License — see [LICENSE](./LICENSE).
