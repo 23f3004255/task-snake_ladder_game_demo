@@ -1,0 +1,142 @@
+body {
+    background: linear-gradient(120deg, #e0eafc, #cfdef3 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    color: #333;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 520px;
+    margin: 32px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(70,90,100,0.20);
+    padding: 24px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 16px 0;
+    font-size: 2em;
+    letter-spacing: 2px;
+    color: #307a8b;
+}
+
+#game-board {
+    margin: 0 auto 20px auto;
+    display: grid;
+    grid-template-columns: repeat(10, 36px);
+    grid-template-rows: repeat(10, 36px);
+    gap: 0;
+    border: 2px solid #308b5e;
+    border-radius: 8px;
+    background: #e0f8e0;
+    width: 363px;
+    height: 363px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cell {
+    width: 36px;
+    height: 36px;
+    background: #fffbaa;
+    border: 1px solid #f0e070;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 3px 4px 2px 2px;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+.cell.even { background: #e3fbfb; }
+.cell.odd { background: #fff8d6; }
+
+.cell .sn-ladder-emoji {
+    font-size: 18px;
+}
+.cell .cell-idx {
+    position: absolute;
+    left: 3px;
+    top: 2px;
+    font-size: 10px;
+    color: #888;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.piece {
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    filter: drop-shadow(0 0 2px #fff9);
+    border-radius: 30%;
+}
+.piece.player1 { background: #c8f5e6; }
+.piece.player2 { background: #ffe8f8; }
+
+#players-status {
+    display: flex;
+    justify-content: space-around;
+    margin: 14px 0 8px 0;
+}
+
+#players-status .player-stat {
+    font-size: 1.22em;
+    padding: 2px 8px;
+}
+
+#turn-indicator {
+    font-weight: bold;
+    color: #234d3c;
+    margin-right: 8px;
+}
+
+.control-panel button {
+    background: #4ab87d;
+    color: #fff;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 24px;
+    cursor: pointer;
+    margin: 0 4px;
+    outline: none;
+    transition: background 0.2s;
+}
+.control-panel button:active {
+    background: #2c9860;
+}
+#roll-btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+#restart-btn {
+    background: #e6615e;
+    margin-top: 14px;
+}
+#restart-btn:hover {
+    background: #c52918;
+}
+
+#dice-result {
+    font-size: 2.1em;
+    margin: 8px 0;
+    min-height: 1.5em;
+    color: #323d75;
+    transition: color 0.18s;
+}
+
+footer {
+    font-size: 13px;
+    margin-top: 16px;
+    color: #aaa;
+}
+footer a { color: #78aaef; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
